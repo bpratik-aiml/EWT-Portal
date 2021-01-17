@@ -1,0 +1,96 @@
+<?php
+session_start();
+if(isset($_POST['save']))
+{
+$rno=$_SESSION['otp'];
+$urno=$_POST['otpvalue'];
+if(!strcmp($rno,$urno))
+{
+$name=$_SESSION['name'];
+$email=$_SESSION['email'];
+$phone=$_SESSION['phone'];
+//For admin if he want to know who is register
+$to="example@gmail.com";
+$subject = "Thank you!";
+$txt = "Some one show your demo Email id: ".$email." Mobile number : ".$phone."";
+$headers = "From: studentstutorial@gmail.com" . "\r\n" .
+"CC: divyasundarsahu@gmail.com";
+mail($to,$subject,$txt,$headers);
+echo "<p>Thank you for show our Demo.</p>";
+//For admin if he want to know who is register
+}
+else{
+echo "<p>Invalid OTP</p>";
+}
+}
+//resend OTP
+if(isset($_POST['resend']))
+{
+$message="<p class='w3-text-green'>Sucessfully send OTP to your mail.</p>";
+$rno=$_SESSION['otp'];
+$to=$_SESSION['email'];
+$subject = "OTP";
+$txt = "OTP: ".$rno."";
+$headers = "From: otp@studentstutorial.com" . "\r\n" .
+"CC: divyasundarsahu@gmail.com";
+mail($to,$subject,$txt,$headers);
+$message="<p class='w3-text-green w3-center'><b>Sucessfully resend OTP to your mail.</b></p>";
+}
+?>
+
+
+
+<html>
+<head>
+     <!-- Required meta tags -->
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<title>Activity Confirmation</title>
+<style>
+body{
+    background-color: #EBDEF0;
+}
+h4{
+  background-color: white;
+  width: 700px;
+  border: 15px grey;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+</head>
+<body>
+    <center>
+    <h4> 
+    <form class="was-validated">
+        <center>
+    <div class="row">
+        <div class="col">
+            <label for="RegInfo">Enter OTP</label>
+            <input type="text" class="form-control" id="OTP" placeholder="OTP" name="OTP" value="" required>
+        </div>
+    </div>
+    <br><br>
+    <button type="submit" class="btn btn-success">Verify OTP</button> 
+    <br>
+    </h4>
+    </center>
+    </form>
+        <br>
+        <br>
+        <br><br><br><br><br><br><br>
+    <footer>
+        <h5><center>
+            <p>Copyrights:2020<br><p>Made By :Pratik Bhatt,Ritika Chaube and Parth Desai</p></h5></center>
+    </footer>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</body>
+</html>
