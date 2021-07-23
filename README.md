@@ -10,4 +10,5 @@
   ### Back End
   * PHP
   * MongoDB
-  
+  > We have used vendor to get plugins to connect **PHP** and **MongoDB**.
+ 
