@@ -2,12 +2,12 @@
 ### EWT portal is website which can be used by NGO's for donation and for providing study material to the students. Students can also have a chat with their mentors
 
 ## Technologies used :
-  Front End
+  ### Front End
   * HTML
   * CSS
   * BOOTSTRAP
   * JAVASCRIPT
-  Back End
+  ### Back End
   * PHP
   * MongoDB
   
