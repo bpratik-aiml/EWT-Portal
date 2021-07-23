@@ -9,6 +9,6 @@
   * JAVASCRIPT
   ### Back End
   * PHP
-  * MongoDB ⋅⋅
+  * MongoDB⋅⋅
   ⋅⋅⋅We have used vendor to get plugins to connect **PHP** and **MongoDB**.
  
